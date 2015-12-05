@@ -19,6 +19,7 @@ n = floor((N - windowSize) / hopSize) + 1;
 for i = 1:n
     iStart = (i-1) * hopSize + 1;
     iEnd = iStart + windowSize -1;
-    y(:, i) = cqt(X(iStart:iEnd), fs);
+    y(:, i) = cqt(X(iStart:iEnd), fs, B, lowFreq , highFreq);
+    y = amplitudeInDecibel(y);
 end
 

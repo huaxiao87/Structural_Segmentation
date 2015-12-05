@@ -27,7 +27,7 @@ bpm = t(2);       % use faster BPM estimate
 hopSize = round(fs * 60 / bpm);      % hop size equal to beat length
 windowSize = 3 * hopSize;
 
-% spectral envelope using constant Q transform[CQT]
+% low-level Feature Matrix using constant Q transform[CQT] 
 spectral_envelope = SpectralEnvelope(X, fs, windowSize, hopSize);
 
 
