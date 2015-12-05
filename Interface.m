@@ -29,5 +29,8 @@ windowSize = 3 * hopSize;
 
 % low-level Feature Matrix using constant Q transform[CQT] 
 spectral_envelope = SpectralEnvelope(X, fs, windowSize, hopSize);
+[spectrum, power] = normalize(sepctral_envelope);
+
+% norm need normed!!
 
 
