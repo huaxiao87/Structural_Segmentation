@@ -1,5 +1,8 @@
 function [ Y ] = amplitudeInDecibel( X )
 % tranform linear amplitude scale to logarithmic scale(in decibel)
-Y = 20 * log10(X/0.00001);
+
+% X: linear scale amplitude vector
+
+Y = 20 * log10(abs(X)/0.00001);
 end
 
