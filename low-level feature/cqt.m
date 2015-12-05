@@ -1,4 +1,4 @@
-function [ cqt ] = cqt( X, fs, B, lowFreq , highFreq )
+function [ cqt ] = cqt( X, fs, B, lowFreq , highFreq)
 % fs            sampling rate  
 % B             bins per octave
 % lowFreq       lowest frequency 
@@ -15,7 +15,8 @@ for i = 1:numOfFilters
     windowEnd = floor(blockSize * lowFreq / w)-1;% variable window length
     t            = (0:step:windowEnd*step);% indices for discretizing basis
     filter       = exp(2 * pi * 1j * w * t);% 1j means the imaginary unit
-    cqt(i)       = filter * X(1:(windowEnd+1),1)';
+    cqt(i)       = filter * X(1:(windowEnd+1));
+
 end
 
 end
