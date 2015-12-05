@@ -1,4 +1,5 @@
 %% Main
+function interface()
 % global constant parameters
 fs = 11025;     % each audio file downsample to 11025Hz;
 
@@ -11,7 +12,7 @@ numOfFilters    = log2(highFreq/lowFreq) * B;     % how many filters in the filt
 % run through files
 
 % read audio files
-[x, fs0] = audioread('test.m4a');
+[x, fs0] = audioread('Hey Jude-The Beatles.mp3');
 
 % mix channel
 X = mean(x,2);
@@ -28,7 +29,7 @@ hopSize = round(fs * 60 / bpm);      % hop size equal to beat length
 windowSize = 3 * hopSize;
 
 % low-level Feature Matrix using constant Q transform[CQT] 
-spectral_envelope = SpectralEnvelope(X, fs, windowSize, hopSize);
+spectral_envelope = SpectralEnvelope(X, fs, windowSize, hopSize, B, lowFreq, highFreq);
 [spectrum, power] = normalize(sepctral_envelope);
 
 % norm need normed!!

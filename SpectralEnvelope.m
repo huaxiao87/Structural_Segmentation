@@ -4,7 +4,7 @@
 %  windowSize: 3 * beat-length from bpm
 %  y: m x n matrix of spectral envelope [m: log frequency bands, n: block number]
 
-function y = SpectralEnvelope(X, fs, windowSize, hopSize)
+function y = SpectralEnvelope(X, fs, windowSize, hopSize, B, lowFreq, highFreq)
 
 % total block number
 N = length(X);
