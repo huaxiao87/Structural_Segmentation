@@ -1,5 +1,5 @@
 %% Main
-function interface()
+function [spectrum, power] = Interface
 % global constant parameters
 fs = 11025;     % each audio file downsample to 11025Hz;
 
@@ -7,7 +7,6 @@ fs = 11025;     % each audio file downsample to 11025Hz;
 B               = 8;        % bins per octave
 lowFreq          = 62.5;     % lowest frequency band
 highFreq         = 16000;      % highest frequency band
-numOfFilters    = log2(highFreq/lowFreq) * B;     % how many filters in the filter bank
 
 % run through files
 
@@ -30,8 +29,7 @@ windowSize = 3 * hopSize;
 
 % low-level Feature Matrix using constant Q transform[CQT] 
 spectral_envelope = SpectralEnvelope(X, fs, windowSize, hopSize, B, lowFreq, highFreq);
-[spectrum, power] = normalize(sepctral_envelope);
+[spectrum, power] = normalize(spectral_envelope);
 
-% norm need normed!!
 
 
