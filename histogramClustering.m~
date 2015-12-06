@@ -1,0 +1,21 @@
+function [ clusterLabels ] = histogramClustering( stateSequence, neighbouringBeatNum, stateNum )
+% clustering the state sequence by histogram clustering
+% the histogram length specifys how many neighbouring states to be counted 
+% in a histogram window
+
+% using the window to break the state sequence into small blocks
+histogramNum    =  length(stateSequence)-neighbouringBeatNum-1;% the number of histograms
+histogramMatrix = zeros(histogramNum,stateNum)
+for i = 1 : (length(stateSequence)-neighbouringBeatNum-1)
+    % obtain individual blocks
+    currentBlock            = stateSequence(i:(neighbouringBeatNum+1),1);
+    histogramMatrix(i,:)    = histcounts(currentBlock,1:stateNum);% count the states
+end
+
+clusterLabels = kmeans()
+
+% making histograms for each window
+
+
+end
+
