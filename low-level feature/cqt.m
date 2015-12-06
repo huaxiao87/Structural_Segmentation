@@ -15,7 +15,7 @@ for i = 1:numOfFilters
     windowEnd = floor(blockSize * lowFreq / w)-1;% variable window length
     t            = (0:step:windowEnd*step);% indices for discretizing basis
     filter       = exp(2 * pi * 1j * w * t);% 1j means the imaginary unit
-    cqt(i)       = filter * X(1:(windowEnd+1));
+    cqt(i)       = filter * X(1:(windowEnd+1))/(windowEnd+1);
 end
 
 end
