@@ -1,4 +1,4 @@
-function [ state_equnce ] = getStateSequence( X , stateNum)
+function [ state_sequence ] = getStateSequence( X , stateNum)
 % training the HMM and using Viterbi algorithm to decode the state sequence
 %   X        feature sequence
 %   stateNum number of states
@@ -10,6 +10,6 @@ initHmm      = hmminit(stateNum,X);
 model        = hmmem(X,initHmm);
 
 % using Viterbi algorithm to decode the state sequnce
-state_equnce = hmmviterbi(X,model);
+state_sequence = hmmviterbi(X,model);
 end
 

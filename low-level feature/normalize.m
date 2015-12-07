@@ -14,11 +14,16 @@ pow = zeros(1, N);
 
 for i = 1:N
     power = norm(x(:,i));
+    if power ~= 0
     y(:,i) = x(:,i) / power;
     pow(1,i) = power;
+    else
+        pow(1,i)=0;
+    end
 end
-
-pow = pow / max(pow);
+if pow ~=0
+    pow = pow / max(pow);
+end
 
 
 

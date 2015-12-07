@@ -26,7 +26,7 @@ tic
 hmm1 = hmmem(x,hmm0,stopcrit,reg);
 toc
 [pth,tmp,sortofprob] = hmmviterbi(x,hmm1);
-confmat(labx,pth)
+
 tic
 hmm2 = hmmlogem(x,hmm0,stopcrit,reg);
 toc
