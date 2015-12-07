@@ -8,4 +8,3 @@ neighbouringBeatNum = 15;  % number of neighbouring beats
  seq        = getStateSequence(featMat,stateNum);
  idx        = histogramClustering( seq, neighbouringBeatNum, stateNum );
  plot(idx)
- 
