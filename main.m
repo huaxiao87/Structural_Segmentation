@@ -17,7 +17,7 @@ recall              = 0;
 fmeasure            = 0;
 numFiles            = 0;
 
-for i = 5:7%length(audioFileList)
+for i = 5:12%length(audioFileList)
     
     %is current fileID a folder?
     if audioFileList(i).isdir == 1
