@@ -1,0 +1,8 @@
+% main
+stateNum % number of states 
+
+
+ featMat    = getLowLevelFeatures('Stan.mp3');
+ seq        = getStateSequence(featMat,80);
+ idx        = histogramClustering( seq, 7, 80 );
+ 

@@ -30,7 +30,7 @@ spectral_envelope                   = SpectralEnvelope(X, fs, windowSize, hopSiz
 [spectrum, power]                   = normalize(spectral_envelope);
 
 % using principal component analysis to reduce the number of features
-[~,spectrumProjection]   = pca(spectrum);
+[~,spectrumProjection]   = pca(spectrum');
 
 % we only use the first 20 principal components
 spectrumProjection                  = spectrumProjection(:,1:20);
