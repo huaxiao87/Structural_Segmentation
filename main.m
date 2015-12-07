@@ -9,7 +9,7 @@ groundTruthFileList = dir(groundTruthDir);
 audioFileList       = dir(audioDir);
 numOfFiles          = (length(audioFileList)-4);
 
-stateNum            = 80; % number of states 
+stateNum            = 20; % number of states 
 neighbouringBeatNum = 15;  % number of neighbouring beats
 
 precision           = 0;
