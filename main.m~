@@ -27,7 +27,7 @@ for i = 5:length(audioFileList)
             featMat    = getLowLevelFeatures(filesListOfSubfolder.name);
             seq        = getStateSequence(featMat,stateNum);
             idx        = histogramClustering( seq, neighbouringBeatNum, stateNum );
-            boundaries = getBoundaries(idx);
+
            
         end
     end
