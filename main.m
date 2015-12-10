@@ -1,9 +1,9 @@
 % main
 %where is the ground truth?
-groundTruthDir      = '/Volumes/Document/Dataset/QMUL_beatles/The Beatles Annotations/seglab/The Beatles';
+groundTruthDir      = './Dataset for evaluation/Annotations/';
 
 %where is the audio data?
-audioDir            = '/Volumes/Document/Dataset/QMUL_beatles'; 
+audioDir            = './Dataset for evaluation/Audio'; 
 
 groundTruthFileList = dir(groundTruthDir);
 audioFileList       = dir(audioDir);
@@ -17,7 +17,7 @@ recall              = 0;
 fmeasure            = 0;
 numFiles            = 0;
 
-for i = 5:12%length(audioFileList)
+for i = 3:length(audioFileList)%length(audioFileList)
     
     %is current fileID a folder?
     if audioFileList(i).isdir == 1
